@@ -4,32 +4,79 @@
     box-sizing: border-box;
 }
 
+header {
+    background-color: rgb(208, 71, 71);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    font-size: x-large;
+}
+
+h1 {
+    display: flex;
+    flex: 1;
+}
+
+/* .greenBulb {
+    height: 40px;
+    width: 40px;
+    background: green;
+    border-radius: 50%;
+} */
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     color:aliceblue;
-    background-color: rgb(208, 71, 71);
+    background-color: rgb(190, 63, 63);
 }
 
 section {
+    margin: 4rem;
+    padding: 4rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
+    background: black;
+    box-shadow: inset;
 }
 
 .container {
-    max-width: 20rem;
-    background: whitesmoke;
+    /* padding: 1rem; */
+    max-width: 18rem;
+    background: rgb(249, 235, 161);
+    border-radius: 2%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+.nro {
+    color: rgb(0, 0, 0);
+    padding: 0.1rem;
+   /*  position:absolute;
+    top:0px;
+    right:0px; */
 }
 
+
 .card {
+    font-size: x-large;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: rgb(211, 89, 33);
     padding: 2rem;
+    margin-top: 1rem;
+    border-radius: 2%;
 
 }
 
 img {
     max-width: 100%;
     max-height: 100%;
+    border-radius: 2%;
+    background-color: aliceblue;
 }
