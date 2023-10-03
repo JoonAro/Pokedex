@@ -3,3 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color:aliceblue;
+    background-color: rgb(208, 71, 71);
+}
+
+section {
+    display: flex;
+    gap: 2rem;
+}
+
+.container {
+    max-width: 20rem;
+    background: whitesmoke;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    padding: 2rem;
+
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
