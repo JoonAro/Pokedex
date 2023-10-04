@@ -1,4 +1,6 @@
 const content = document.querySelector('section');
+const container = document.querySelector('container');
+let type2Cont = document.querySelector('type2');
 //creates variable named content and targets section in html
 let pokeData = [1, 2, 3];
 const fetchData = async() => {
@@ -25,26 +27,50 @@ return fetch(item.url)
 });
 })
 }
-
+let type = '';
 //fetch api
 const pokeCards = () => {
     //map takes the pokeData array 
-const cards = pokeData.map(pokemon => {
-    return `<div class="container">
-    <p class="nro">#${pokemon.id}</p>
-    <img
-    src="
-    ${pokemon.img}"
-    />
-    <div class="card">
-    <p>${pokemon.name}</p>
-    </div>
-    </div>`
-}).join('')
+    //getting every string to start with uppercase letter
+    const cards = pokeData.map((pokemon) => {
+        let name = ' ' + pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) + ' ';
+        let type1 = pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1);
+        /* if (type1 = "Grass") {
+            container.container.style.background = 'green';
 
+        } */
+        
+        console.log(pokemon.types[1]);
+        //if there are 2 types and the 2nd type isn't undefined run this or else emptystring
+        if (pokemon.types[1] != undefined) {
+            let type2 = pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1);
+          type2Cont = ` & ${type2}`;
+        }else {
+            type2Cont = '';
+        }
+        return `<div class="container">
+        <p class="nro">#${pokemon.id}</p>
+        <img
+        src="
+        ${pokemon.img}"
+        />
+        <div class="card">
+        <div>Name:${name}</div>
+        <div>Type: </div>
+        <p> ${type1} ${type2Cont}</p>
 
+        </div>
+        </div>`
+        
+        
+    }).join('')
+//pokemon.types.map((type) => getTypeString(type)).join('')
+/* ${pokemon.types[0].type.name} */
+/* ${if (pokemon.types[1] != undefined) {
+    pokemon.types[1].type.name}
+}} */
 
-
+//<p class="type2">${type2Cont}</p>
 /* `<div class="container">
     <p class="nro">#3</p>
     <img
