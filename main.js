@@ -32,15 +32,18 @@ let type = '';
 const pokeCards = () => {
     //map takes the pokeData array 
     //getting every string to start with uppercase letter
+    console.log(pokeData);
     const cards = pokeData.map((pokemon) => {
         let name = ' ' + pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) + ' ';
         let type1 = pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1);
+        console.log(type1);
+        
         /* if (type1 = "Grass") {
-            container.container.style.background = 'green';
 
         } */
         
-        console.log(pokemon.types[1]);
+        /* console.log(pokemon.types[0].type.url); */
+
         //if there are 2 types and the 2nd type isn't undefined run this or else emptystring
         if (pokemon.types[1] != undefined) {
             let type2 = pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1);
@@ -50,7 +53,7 @@ const pokeCards = () => {
         }
         return `<div class="container">
         <p class="nro">#${pokemon.id}</p>
-        <img
+        <img class="pokePic ${type1}"
         src="
         ${pokemon.img}"
         />
@@ -58,11 +61,8 @@ const pokeCards = () => {
         <div>Name:${name}</div>
         <div>Type: </div>
         <p> ${type1} ${type2Cont}</p>
-
         </div>
         </div>`
-        
-        
     }).join('')
 //pokemon.types.map((type) => getTypeString(type)).join('')
 /* ${pokemon.types[0].type.name} */
@@ -83,4 +83,5 @@ const pokeCards = () => {
     content.innerHTML = cards;
     //this creates the content inside section
 }
+
 fetchData();

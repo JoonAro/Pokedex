@@ -53,6 +53,7 @@ section {
     padding-left: 1rem;
     padding-bottom: 1rem;
 }
+
 .nro {
     color: rgb(0, 0, 0);
     padding: 0.1rem;
@@ -68,7 +69,7 @@ section {
     flex-wrap: wrap;
     justify-content:left;
     align-items:start;
-    background: rgb(211, 89, 33);
+    background-image: linear-gradient(to bottom right, rgb(209, 122, 83),rgb(199, 136, 19));
     padding: 1rem;
     margin-top: 0.5rem;
     border-radius: 2%;
@@ -80,5 +81,56 @@ img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 2%;
-    background-color: aliceblue;
+    /* background-color: rgb(102, 255, 127); */
+}
+
+.pokePic[class*="Grass"] {
+    background-image: linear-gradient(to bottom right, greenyellow, green);
+}
+.pokePic[class*="Water"] {
+    background-image: linear-gradient(to bottom right, rgb(110, 147, 249), rgb(0, 6, 128));
+}
+.pokePic[class*="Fire"] {
+    background-image: linear-gradient(to bottom right, rgb(231, 122, 27), rgb(95, 0, 0));
+}
+.pokePic[class*="Flying"] {
+    background-image: linear-gradient(to bottom right, rgb(252, 252, 252), rgb(0, 62, 168));
+}
+.pokePic[class*="Psychic"] {
+    background-image: linear-gradient(to bottom right, black, rgb(252, 47, 255), rgb(0, 0, 0));
+}
+.pokePic[class*="Bug"] {
+    background-image: linear-gradient(to bottom right, rgb(235, 255, 121), rgb(24, 112, 24));
+}
+
+.pokePic[class*="Normal"] {
+    background-image: linear-gradient(to bottom right, rgb(86, 85, 41),rgb(254, 254, 254));
+}
+
+.pokePic[class*="Poison"] {
+    background-image: linear-gradient(to bottom right, rgb(189, 40, 172), rgb(8, 50, 0));
+}
+
+.pokePic[class*="Electric"] {
+    background-image:linear-gradient(to bottom right,  black, yellow, white, yellow, black);
+}
+
+.pokePic[class*="Ground"] {
+    background-image:linear-gradient(to bottom right, rgb(247, 210, 0), rgb(194, 120, 0));
+}
+
+.pokePic[class*="Fighting"] {
+    background-image:linear-gradient(to bottom right, black,  rgb(255, 0, 0), rgb(0, 0, 0));
+}
+
+.pokePic[class*="Rock"] {
+    background-image:linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 255, 255));
+}
+
+.pokePic[class*="Ghost"] {
+    background-image:linear-gradient(to bottom right, rgb(2, 0, 0), rgb(91, 30, 142));
+}
+
+.pokePic[class*="Fairy"] {
+    background-image:linear-gradient(to bottom right, rgb(255, 144, 144), rgb(197, 125, 255));
 }
