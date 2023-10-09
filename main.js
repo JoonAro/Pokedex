@@ -1,6 +1,7 @@
 const content = document.querySelector('section');
 const container = document.querySelector('container');
 let type2Cont = document.querySelector('type2');
+const searchInput = document.querySelector('.searchBar');
 //creates variable named content and targets section in html
 let pokeData = [1, 2, 3];
 const fetchData = async() => {

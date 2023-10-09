@@ -19,6 +19,39 @@ h1 {
     flex: 1;
 }
 
+.pokeSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 150px;
+    background: rgb(1, 155, 3);
+    border-radius: 5px;
+    cursor:default;
+}
+
+.pokeSearch:hover {
+    background: rgb(0, 189, 0);
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    width:330px;
+    border-radius: 5px;
+    font-size: x-large;
+    background: #333;
+}
+
+#searchBar {
+     display: flex;
+    justify-content: center;
+    height: 40px;
+    width:150px;
+    font-size: x-large;
+}
 /* .greenBulb {
     height: 40px;
     width: 40px;
@@ -116,7 +149,7 @@ img {
 }
 
 .pokePic[class*="Ground"] {
-    background-image:linear-gradient(to bottom right, rgb(247, 210, 0), rgb(194, 120, 0));
+    background-image:linear-gradient(to bottom right, rgb(247, 210, 0), rgb(144, 89, 0));
 }
 
 .pokePic[class*="Fighting"] {
