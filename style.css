@@ -67,11 +67,11 @@ body {
 }
 
 section {
-    margin: 4rem;
-    padding: 4rem;
+    margin: 1.5%;
+    padding: 1.5%;
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     background: black;
     box-shadow: inset;
@@ -79,7 +79,7 @@ section {
 
 .container {
     /* padding: 1rem; */
-    max-width: 18rem;
+    max-width: 15rem;
     background: rgb(249, 235, 161);
     border-radius: 2%;
     padding-right: 1rem;
@@ -88,25 +88,39 @@ section {
 }
 
 .nro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(0, 0, 0);
     padding: 0.1rem;
-   /*  position:absolute;
-    top:0px;
-    right:0px; */
+    position:relative;
+    top: 20px;
+    left: 8px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    color: white;
+    font-size: large;
+    background-image: none;
 }
+
+/* .nro[class*='Fire'] {
+background-image: url("https://www.clipartmax.com/png/small/83-830894_fire-type-pokemon-symbol-pokemon-fire-type-logo.png");
+} */
 
 
 .card {
-    font-size: x-large;
+    font-size: large;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content:left;
-    align-items:start;
+    justify-content: center;
+    align-items: start;
     background-image: linear-gradient(to bottom right, rgb(209, 122, 83),rgb(199, 136, 19));
-    padding: 1rem;
+    padding: 0.5rem;
     margin-top: 0.5rem;
     border-radius: 2%;
-    height: 8rem;
+    height: 6.5rem;
 
 }
 
@@ -118,7 +132,7 @@ img {
 }
 
 .pokePic[class*="Grass"] {
-    background-image: linear-gradient(to bottom right, greenyellow, green);
+    background-image: linear-gradient(to bottom right, green, greenyellow);
 }
 .pokePic[class*="Water"] {
     background-image: linear-gradient(to bottom right, rgb(110, 147, 249), rgb(0, 6, 128));
@@ -133,7 +147,7 @@ img {
     background-image: linear-gradient(to bottom right, black, rgb(252, 47, 255), rgb(0, 0, 0));
 }
 .pokePic[class*="Bug"] {
-    background-image: linear-gradient(to bottom right, rgb(235, 255, 121), rgb(24, 112, 24));
+    background-image: linear-gradient(to bottom right, rgb(24, 112, 24), rgb(235, 255, 121));
 }
 
 .pokePic[class*="Normal"] {
@@ -166,4 +180,7 @@ img {
 
 .pokePic[class*="Fairy"] {
     background-image:linear-gradient(to bottom right, rgb(255, 144, 144), rgb(197, 125, 255));
+}
+@media (max-width:1000px) {
+    .container {min-width: 25%;}
 }
