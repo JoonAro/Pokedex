@@ -1,14 +1,41 @@
 const content = document.querySelector('section');
+//creates variable named content and targets section in html
 const container = document.querySelector('container');
 let type2Cont = document.querySelector('type2');
-let searchInput;
 const searchButton = document.querySelector('pokeSearch');
-//creates variable named content and targets section in html
+let searchInput;
 let pokeData = [1, 2, 3];
-let pokeData2 = [];
+let pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=121&offset=0'
+const searchFunc = () => {
+    searchInput = document.querySelector('#searchBar').value;
+    console.log(searchInput);
+    if(searchInput < 121 && searchInput >= 0) {
+        searchInput--;
+    searchInput = searchInput.toString();
+    } else {
+        pokeData.map((pokemon) => {
+            if (pokemon.name === searchInput) {
+                searchInput = pokemon.id;
+                searchInput--;
+                console.log(pokemon.id);
+            } else {
+                console.log('Search does not match a pokemon');
+                console.log(pokemon.name);
+            }
+
+        })
+        }
+    
+    let pokeUrl2 = `https://pokeapi.co/api/v2/pokemon?limit=1&offset=${searchInput}`;
+    console.log(searchInput);
+    pokeUrl = pokeUrl2;
+    console.log(pokeUrl);
+    fetchData();
+}
+
 const fetchData = async() => {
     await
-fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0')
+fetch(pokeUrl)
 .then(res => res.json())
 .then(data => {
     const fetches = data.results.map(item => {
@@ -33,66 +60,46 @@ return fetch(item.url)
 });
 })
 }
-const fetchData2 = async() => {
-    await
-fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0')
-.then(res => res.json())
-.then(data => {
-    const fetches2 = data.results.map(item => {
-return fetch(item.url)
-.then((res) => res.json())
-.then((data) => {
-    return {
-        id: data.id,
-        name: data.name,
-        img: data.sprites.other['official-artwork'].front_default,
-        types: data.types,
-        height: data.height,
-        weight: data.weight
-    };
-});
+/* const pokemonSearched = pokeData2.filter((pokemon) => pokemon.name.includes(searchInput)).map((pokemon2) => { */
 
-});
-    Promise.all(fetches2).then(res => {
-        pokeData2 = res;
+    
+    
+    
+    
 
-        pokeCards();
-});
-})
-}
-let type = '';
+/* const fetchData2 = async() => {
+    const response = await fetch(pokeUrl);
+    const data = await response.json();
+    const {name, id, height, weight, types} = data;
+    const img = data.sprites.other['official-artwork'].front_default;
+    name1 = name;
+    id1 = id;
+    height1 = height;
+    weight1 = weight;
+    img1 = img;
+        whatEverFunc(); */
+        
+    
+    
+    
+
+
+
+
+
+
+/* let type = ''; */
 //fetch api
 //pokeSearch make a new fetch for the pokesearch and display those results instead of pokecards with an if statement
 searchInput = document.querySelector('#searchBar').value
 console.log(searchInput);
-/* const whatEverFunc = () => {
-    const pokemonSearched = pokeData2.filter((pokemon) => pokemon.name.includes(searchInput)).map((pokemon2) => {
-        console.log(pokemon2);
-        return `<div class="container">
-        <p class="nro">#${pokemon2.id}</p>
-        <img class="pokePic"
-        src="
-        ${pokemon2.img}"
-        />
-        <div class="card">
-        <div>Name:${pokemon2.height}</div>
-        <div>Type:${pokemon2.weight} </div>
-        <p> $} ${type2Cont}</p>
-        </div>
-        </div>`
-    }).join('')
-    content.innerHTML = pokemonSearched;
-    
-    
-    
-    
-}
-*/
+
+
 const pokeCards = () => {
    //map takes the pokeData array 
     //getting every string to start with uppercase letter
     const cards = pokeData.map((pokemon) => {
-        
+        console.log(pokemon);
         let name = ' ' + pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) + ' ';
         let type1 = pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1);
         let weight = pokemon.weight / 10;
@@ -127,20 +134,12 @@ const pokeCards = () => {
     pokemon.types[1].type.name}
 }} */
 
-//<p class="type2">${type2Cont}</p>
-/* `<div class="container">
-    <p class="nro">#3</p>
-    <img
-    src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/8/89/Pikachu.jpg"
-    />
-    <div class="card">
-    <p>Name will be here</p>
-    </div>
-    </div>` */
+
     content.innerHTML = cards;
     
     //this creates the content inside section
 }
 fetchData();
+
 /* document.addEventListener('click', whatEverFunc); */
 /* searchButton.addEventListener('click', whatEverFunc); */

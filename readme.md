@@ -7,3 +7,4 @@
           <p>Name will be here</p>
         </div>
       </div>
+fetch('https://pokeapi.co/api/v2/pokemon?limit=121&offset=0')
