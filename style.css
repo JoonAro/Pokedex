@@ -181,6 +181,14 @@ img {
 .pokePic[class*="Fairy"] {
     background-image:linear-gradient(to bottom right, rgb(255, 144, 144), rgb(197, 125, 255));
 }
+
+.pokePic[class*="Dragon"] {
+        background-image:linear-gradient(to bottom right, black,  rgb(0, 213, 255), rgb(0, 0, 0));
+}
+
+.pokePic[class*="Ice"] {
+    background-image:linear-gradient(to bottom right, rgb(0, 52, 155), rgb(255, 255, 255), rgb(0, 52, 155));
+}
 @media (max-width:1000px) {
     .container {min-width: 25%;}
 }

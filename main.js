@@ -7,7 +7,8 @@ let searchInput;
 const searchDiv = document.querySelector('search');
 let pokeData = [1, 2, 3];
 let searchResult = [];
-let pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=121&offset=0'
+let pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
+let pokeUrl2 =  'https://pokeapi.co/api/v2/pokemon?limit=151&offset=151'
 const searchFunc = () => {
     searchInput = document.querySelector('#searchBar').value;
     console.log(searchInput);
