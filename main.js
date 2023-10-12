@@ -4,12 +4,13 @@ const container = document.querySelector('container');
 let type2Cont = document.querySelector('type2');
 const searchButton = document.querySelector('pokeSearch');
 let searchInput;
+const searchDiv = document.querySelector('search');
 let pokeData = [1, 2, 3];
 let pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=121&offset=0'
 const searchFunc = () => {
     searchInput = document.querySelector('#searchBar').value;
     console.log(searchInput);
-    if(searchInput < 121 && searchInput >= 0) {
+    if(searchInput < 121 && searchInput >= 1) {
         searchInput--;
     searchInput = searchInput.toString();
     } else {
@@ -18,19 +19,20 @@ const searchFunc = () => {
                 searchInput = pokemon.id;
                 searchInput--;
                 console.log(pokemon.id);
+                let pokeUrl2 = `https://pokeapi.co/api/v2/pokemon?limit=1&offset=${searchInput}`;
+                console.log(searchInput);
+                pokeUrl = pokeUrl2;
             } else {
                 console.log('Search does not match a pokemon');
                 console.log(pokemon.name);
+                console.log(searchInput);
             }
-
+            
         })
-        }
-    
-    let pokeUrl2 = `https://pokeapi.co/api/v2/pokemon?limit=1&offset=${searchInput}`;
-    console.log(searchInput);
-    pokeUrl = pokeUrl2;
+    }
     console.log(pokeUrl);
     fetchData();
+    pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=121&offset=0';
 }
 
 const fetchData = async() => {
@@ -141,5 +143,10 @@ const pokeCards = () => {
 }
 fetchData();
 
-/* document.addEventListener('click', whatEverFunc); */
+const searchBarReset = () => {
+    /* searchInput = ''; */
+    searchInput = document.querySelector('#searchBar').value;
+}
+/* searchInput.addEventListener('change', searchBarReset); */
+searchDiv.addEventListener('change', searchBarReset);
 /* searchButton.addEventListener('click', whatEverFunc); */
