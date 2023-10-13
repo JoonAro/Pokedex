@@ -6,25 +6,246 @@
 
 header {
     background-color: rgb(208, 71, 71);
-    display: flex;
-    justify-content: left;
+ /*    display: flex;
+    flex-direction: row; */
+    width: 100%;
+/*     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    padding: 2rem;
+    gap: 1rem; */
+    padding: 1rem 0;
     font-size: x-large;
 }
-
+.topHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content:center;
+    max-width: 100%;
+    gap:1rem;
+}
 h1 {
     display: flex;
-    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
 }
+.genOuter {
+     display: flex;
+    flex-direction: center;
+    align-items: center;
+   /*  background:#333; */
+}
+.genFrame {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    width: 400px;
+    border-radius: 5px;
+    font-size: x-large;
+    margin: 0.5rem 0;
+}
+.genHolder {
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    font-size: x-large;
+    background: #333;
+    overflow: auto;
+    scroll-snap-type: mandatory;
+    overscroll-behavior-x:contain;
+    scroll-behavior: smooth;
+    box-shadow: inset;
+}
+.pokeGen1 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: red;
+    scroll-snap-align: center;
+    margin-left: 10px;
+    transition-duration: 0.5s;
+}
+.pokeGen1:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+    margin-left: 14px;   
+}
+.pokeGen2 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(1, 155, 3);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.pokeGen3 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: blue;
+    scroll-snap-align: center;
+}
+.pokeGen4 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(204, 143, 0);
+    scroll-snap-align: center;
+}
+.pokeGen5 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(189, 18, 189);
+    scroll-snap-align: center;
+}
+.pokeGen6 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(0, 89, 255);
+    scroll-snap-align: center;
+}
+.pokeGen7 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(241, 145, 19);
+    scroll-snap-align: center;
+}
+.pokeGen8 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(0, 135, 45);
+    scroll-snap-align: center;
+}
+
+.pokeGen9 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(51, 0, 255);
+    scroll-snap-align: center;
+}
+.pokeGen10 {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(255, 0, 0);
+    margin-right: 10px;
+    scroll-snap-align: center;
+}
+.pokeGen2:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen3:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen4:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen5:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen6:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen7:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen8:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.pokeGen9:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+.pokeGen10:hover {
+    border:2px;
+    border-style: solid;
+    border-color: white;
+}
+
 
 .pokeSearch {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
-    width: 150px;
+    width: 100px;
     background: rgb(1, 155, 3);
     border-radius: 5px;
     cursor:default;
@@ -39,10 +260,12 @@ h1 {
     align-items: center;
     gap: 10px;
     height: 60px;
-    width:330px;
+    width:280px;
     border-radius: 5px;
     font-size: x-large;
     background: #333;
+    padding: 0 10px;
+    margin: 0.5rem;
 }
 
 #searchBar {
@@ -50,43 +273,48 @@ h1 {
     justify-content: center;
     height: 40px;
     width:150px;
+    min-width: 100px;
     font-size: x-large;
 }
-/* .greenBulb {
-    height: 40px;
-    width: 40px;
-    background: green;
-    border-radius: 50%;
-} */
-
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     color:aliceblue;
     background-color: rgb(190, 63, 63);
+    text-align: center;
+    font-size: x-large;
+    min-width: 580px;
 }
-
+.pokemonInGen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 100%;
+}
 section {
-    margin: 1.5%;
-    padding: 1.5%;
+    margin: 20px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     background: black;
+    background-image: url(trees-1866597_1920.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     box-shadow: inset;
+    min-width: 520px;
+    min-height: 100vh;
 }
-
 .container {
-    /* padding: 1rem; */
     max-width: 15rem;
     background: rgb(249, 235, 161);
     border-radius: 2%;
     padding-right: 1rem;
     padding-left: 1rem;
     padding-bottom: 1rem;
+    max-height: 380px;
 }
-
 .nro {
     display: flex;
     justify-content: center;
@@ -101,14 +329,7 @@ section {
     border-radius: 50%;
     color: white;
     font-size: large;
-    background-image: none;
 }
-
-/* .nro[class*='Fire'] {
-background-image: url("https://www.clipartmax.com/png/small/83-830894_fire-type-pokemon-symbol-pokemon-fire-type-logo.png");
-} */
-
-
 .card {
     font-size: large;
     display: flex;
@@ -120,17 +341,13 @@ background-image: url("https://www.clipartmax.com/png/small/83-830894_fire-type-
     padding: 0.5rem;
     margin-top: 0.5rem;
     border-radius: 2%;
-    height: 6.5rem;
-
+    height: 8rem;
 }
-
 img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 2%;
-    /* background-color: rgb(102, 255, 127); */
 }
-
 .pokePic[class*="Grass"] {
     background-image: linear-gradient(to bottom right, green, greenyellow);
 }
@@ -149,46 +366,64 @@ img {
 .pokePic[class*="Bug"] {
     background-image: linear-gradient(to bottom right, rgb(24, 112, 24), rgb(235, 255, 121));
 }
-
 .pokePic[class*="Normal"] {
     background-image: linear-gradient(to bottom right, rgb(86, 85, 41),rgb(254, 254, 254));
 }
-
 .pokePic[class*="Poison"] {
     background-image: linear-gradient(to bottom right, rgb(189, 40, 172), rgb(8, 50, 0));
 }
-
 .pokePic[class*="Electric"] {
     background-image:linear-gradient(to bottom right,  black, yellow, white, yellow, black);
 }
-
 .pokePic[class*="Ground"] {
     background-image:linear-gradient(to bottom right, rgb(247, 210, 0), rgb(144, 89, 0));
 }
-
 .pokePic[class*="Fighting"] {
     background-image:linear-gradient(to bottom right, black,  rgb(255, 0, 0), rgb(0, 0, 0));
 }
-
 .pokePic[class*="Rock"] {
     background-image:linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 255, 255));
 }
-
 .pokePic[class*="Ghost"] {
     background-image:linear-gradient(to bottom right, rgb(2, 0, 0), rgb(91, 30, 142));
 }
-
 .pokePic[class*="Fairy"] {
     background-image:linear-gradient(to bottom right, rgb(255, 144, 144), rgb(197, 125, 255));
 }
-
 .pokePic[class*="Dragon"] {
         background-image:linear-gradient(to bottom right, black,  rgb(0, 213, 255), rgb(0, 0, 0));
 }
-
 .pokePic[class*="Ice"] {
     background-image:linear-gradient(to bottom right, rgb(0, 52, 155), rgb(255, 255, 255), rgb(0, 52, 155));
 }
-@media (max-width:1000px) {
-    .container {min-width: 25%;}
+.pokePic[class*="Dark"] {
+    background-image:linear-gradient(to bottom right, rgb(0, 52, 155), rgb(0, 0, 0), rgb(0, 52, 155));
 }
+.pokePic[class*="Steel"] {
+    background-image:linear-gradient(to bottom right, rgb(129, 129, 129), rgb(33, 33, 33), rgb(129, 129, 129));
+}
+@media (max-width:1000px) {
+    .container {min-width: 200px;}
+}
+input[type="radio"] {
+    display:none;
+}
+#copyright {
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+}
+/* this makes gen selector change flexrow first */
+@media (max-width: 1007px) {
+    .genOuter {
+      order: 3;
+    }  
+    .left{
+      order: 1;
+    }
+    .search{
+      order: 2; 
+    }
+  }
+  @media (min-width: 580px) {
+    
+  }

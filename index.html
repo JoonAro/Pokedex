@@ -7,23 +7,141 @@
     <title>Pokedex</title>
   </head>
   <header>
-    <h1>Pokedex</h1>
-    <div class="greenBulb"></div>
-    <div class="search">
-      <div>
-        <!-- <label for="searchBar"></label> -->
-        <input
-          id="searchBar"
-          type="text"
-          placeholder="fex pikachu"
-          onfocus="this.value=''"
-        />
+    <div class="topHeader">
+      <div class="left">
+        <h1>Pokedex</h1>
       </div>
-      <div class="pokeSearch" onclick="searchFunc()">PokeSearch</div>
+      <div class="genOuter">
+        <div class="genFrame">
+          <p class="genPara">PokeGen</p>
+          <div class="genHolder">
+            <div class="pokeGen1">
+              <label for="gen1">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen1"
+                  checked
+                  onchange="genSelect()"
+                />1
+              </label>
+            </div>
+            <div class="pokeGen2">
+              <label for="gen2">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen2"
+                  onchange="genSelect()"
+                />2
+              </label>
+            </div>
+            <div class="pokeGen3">
+              <label for="gen3">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen3"
+                  onchange="genSelect()"
+                />3
+              </label>
+            </div>
+            <div class="pokeGen4">
+              <label for="gen4">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen4"
+                  onchange="genSelect()"
+                />4
+              </label>
+            </div>
+            <div class="pokeGen5">
+              <label for="gen5">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen5"
+                  onchange="genSelect()"
+                />5
+              </label>
+            </div>
+            <div class="pokeGen6">
+              <label for="gen6">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen6"
+                  onchange="genSelect()"
+                />6
+              </label>
+            </div>
+            <div class="pokeGen7">
+              <label for="gen7">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen7"
+                  onchange="genSelect()"
+                />7
+              </label>
+            </div>
+            <div class="pokeGen8">
+              <label for="gen8">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen8"
+                  onchange="genSelect()"
+                />8
+              </label>
+            </div>
+            <div class="pokeGen9">
+              <label for="gen9">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen9"
+                  onchange="genSelect()"
+                />9
+              </label>
+            </div>
+            <div class="pokeGen10">
+              <label for="gen10">
+                <input
+                  type="radio"
+                  name="pokeGen"
+                  id="gen10"
+                  onchange="genSelect()"
+                />∞
+              </label>
+            </div>
+          </div>
+          <p class="genPara">Selector</p>
+        </div>
+      </div>
+      <div class="search">
+        <div>
+          <input
+            id="searchBar"
+            type="text"
+            placeholder="fex. fire, poli"
+            onkeydown="search(this)"
+            onchange="this.value=''"
+          />
+        </div>
+        <div class="pokeSearch" onclick="searchFunc()">Search</div>
+      </div>
+    </div>
+    <div class="pokemonInGen">
+      <div>
+        <p id="pokeNr">151 pokemon</p>
+      </div>
     </div>
   </header>
   <body>
     <section></section>
+    <p id="copyright">© Joona Aronen 2023</p>
     <script src="main.js"></script>
   </body>
 </html>
