@@ -7,6 +7,7 @@ let searchInput;
 const searchDiv = document.querySelector('search');
 const pokeNr = document.querySelector('#pokeNr');
 let pokeData = [1, 2, 3];
+let pokeDataAll = [];
 let searchResult = [];
 let pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
 let pokeUrl2 = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=151'
@@ -65,7 +66,7 @@ const genSelect = () => {
     }
     else if (document.querySelector('#gen10').checked) {
         pokeUrls = pokeUrl10;
-        pokeNr.textContent = '1017 Pokemon. Search a pokemon type here to get all pokemon of that type.';
+        pokeNr.textContent = '1017 Pokemon';
     }
     fetchData();
 }
@@ -82,7 +83,7 @@ const searchFunc = () => {
     //get length of searchinput. Needed if name.
     const inputLength = searchInput.length;
 
-    searchResult = pokeData.filter((pokemon) => {
+    searchResult = pokeDataAll.filter((pokemon) => {
         if (pokemon.id === searchInput) {
             return pokemon;
             //using input length to take same length slice of pokemon.name
@@ -122,9 +123,30 @@ const fetchData = async () => {
                 });
             })
 }
-
-
-
+const fetchData2 = async () => {
+    await
+        fetch(pokeUrl10)
+            .then(res => res.json())
+            .then(data => {
+                const fetches2 = data.results.map(item => {
+                    return fetch(item.url)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            return {
+                                id: data.id,
+                                name: data.name,
+                                img: data.sprites.other['official-artwork'].front_default,
+                                types: data.types,
+                                height: data.height,
+                                weight: data.weight
+                            };
+                        });
+                });
+                Promise.all(fetches2).then(res => {
+                    pokeDataAll = res;
+                });
+            })
+}
 const pokeCards = () => {
     //map takes the pokeData array 
     //getting every string to start with uppercase letter
@@ -157,7 +179,6 @@ const pokeCards = () => {
         </div>`
     }).join('')
     content.innerHTML = cards;
-    //this creates the content inside section
 }
 //pokeCard identical to pokeCards but runs the searchResults instead of pokeData and prints card to html instead of cards
 const pokeCard = () => {
@@ -166,7 +187,6 @@ const pokeCard = () => {
         let type1 = pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1);
         let weight = pokemon.weight / 10;
         let height = pokemon.height / 10;
-        //if there are 2 types and the 2nd type isn't undefined run this or else emptystring
         if (pokemon.types[1] != undefined) {
             let type2 = pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1);
             type2Cont = ` & ${type2}`;
@@ -191,6 +211,7 @@ const pokeCard = () => {
     content.innerHTML = card;
 }
 fetchData();
+fetchData2();
 const searchBarReset = () => {
     searchInput = '';
     searchInput = document.querySelector('#searchBar').value;
